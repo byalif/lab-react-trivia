@@ -1,4 +1,8 @@
-function shuffleArray(array) {
+function shuffleArray(arr) {
+  let array = [arr.correct_answer];
+  if (Array.isArray(arr.incorrect_answers)) {
+    array = [...array, ...arr.incorrect_answers];
+  }
   let shuffled = [];
   while (array.length > 0) {
     let randomIndex = Math.floor(Math.random() * array.length);
